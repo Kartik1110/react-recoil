@@ -1,10 +1,8 @@
-import { useContext } from "react"
-import { CountContext } from "../App"
+import { useRecoilValue } from "recoil";
+import { countState } from "../atoms";
 
-function CountComponent() { 
-    const {count} = useContext(CountContext)
-    return (
-        <h1 className="text-2xl">{count}</h1>
-    )
+function CountComponent() {
+  const count = useRecoilValue(countState);
+  return <h1 className="text-2xl">{count}</h1>;
 }
-export default CountComponent
+export default CountComponent;
